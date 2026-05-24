@@ -51,6 +51,7 @@ export const config = {
 export default async function middleware(req: NextRequest, ev: NextFetchEvent) {
   const path = req.nextUrl.pathname;
   const host = req.headers.get("host");
+  console.error("[MW-DEBUG] host=", host, "path=", path, "isCustom=", isCustomDomain(host || ""));
 
   if (isAnalyticsPath(path)) {
     return PostHogMiddleware(req);
