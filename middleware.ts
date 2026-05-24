@@ -28,6 +28,8 @@ function isCustomDomain(host: string) {
         host?.includes("localhost") ||
         host?.includes("papermark.io") ||
         host?.includes("papermark.com") ||
+        (process.env.NEXT_PUBLIC_APP_BASE_HOST &&
+          host === process.env.NEXT_PUBLIC_APP_BASE_HOST) ||
         host?.endsWith(".vercel.app")
       ))
   );
