@@ -45,7 +45,7 @@ export const sendEmail = async ({
   const plainText = toPlainText(html);
 
   const fromAddress =
-    from ?? process.env.EMAIL_FROM ?? "Papermark <noreply@send.elevateoco.com>";
+    from ?? process.env.EMAIL_FROM ?? "Papermark <noreply@elevateoco.com>";
 
   try {
     const { data, error } = await resend.emails.send({
